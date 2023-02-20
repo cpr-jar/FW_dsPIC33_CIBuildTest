@@ -49,7 +49,7 @@
 #include "mcc_generated_files/watchdog.h"
 #include "mcc_generated_files/pin_manager.h"
 
-#define FCY 140000000UL
+#define FCY _XTAL_FREQ
 #include <libpic30.h>
 
 /*
