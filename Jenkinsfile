@@ -20,15 +20,22 @@ pipeline {
         // and store the build artefacts for later use
         stage('Build') {
             agent {
-                dockerfile  {
+				docker	{
+					image 'exact94/jenkins-dspic33'
+                    // Run the container on the node specified at the
+                    // top-level of the Pipeline, in the same workspace,
+                    // rather than on a new node entirely:
+                    reuseNode true
+				}
+                //dockerfile  {
                     // Build agent label to select build agent
                     // to host docker container.
                     // NOTE: This must be a linux based container.
-                    label 'docker'
-                    filename 'Dockerfile'
+                //    label 'docker'
+                //    filename 'Dockerfile'
 
-                    registryUrl "https://registry.hub.docker.com/"
-                }
+                //    registryUrl "https://registry.hub.docker.com/"
+                //}
             }
             steps {
                 sh(
