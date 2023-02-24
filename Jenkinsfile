@@ -34,7 +34,7 @@ pipeline {
             steps {
 				sh(
 					label: 'Running Gitversion'
-					script:"""
+					script: """
 						def props = readProperties file: 'gitversion.properties'
 
 						env.GitVersion_SemVer = props.GitVersion_SemVer
