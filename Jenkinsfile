@@ -44,7 +44,7 @@ pipeline {
 						env.GitVersion_Sha = props.GitVersion_Sha
 						echo env.GitVersion_MajorMinorPatch
 						"""
-				}
+				)
 				sh( 
 					label: 'Stepping to child folder',
 					script: """
