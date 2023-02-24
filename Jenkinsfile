@@ -76,9 +76,12 @@ pipeline {
         }
         stage('Publish') {
             steps {
+				sh(
+					script: "ls"
+				)
                 // Retrieve build artefacts
                 unstash 'build'
-                dir('./CI_BuildTest.X/dist') {	// der Name muss hier raus
+                dir('./') {	// der Name muss hier raus
                     zip archive: true,
                         glob: '**/*',
                         overwrite: true,
