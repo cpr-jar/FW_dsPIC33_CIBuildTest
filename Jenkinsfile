@@ -37,7 +37,6 @@ pipeline {
 					script: """
 							ls
 							cd ./CI_BuildTest.X
-							ls
 							"""
 				)
                 sh(
@@ -47,6 +46,7 @@ pipeline {
                 sh(
                     label: 'Running Makefile',
                     script: """
+							cd ./CI_BuildTest.X
                             rm -rf ./build
                             rm -rf ./dist
 							ls
