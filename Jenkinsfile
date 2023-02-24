@@ -33,7 +33,7 @@ pipeline {
             steps {
 				sh( 
 					label: 'Stepping to child folder',
-					script: "cd ./CI_BuildTest.X"
+					script: "ls"//"cd ./CI_BuildTest.X"
 				)
                 sh(
                     label: 'Generate build makefiles',
