@@ -6,6 +6,7 @@
 pipeline {
     environment {
         BUILD_CONFIGURATION = 'default'
+		PROJECT_NAME = './CI_BuildTest.X'
         SUPPORT_SCRIPT_REPO = 'https://raw.githubusercontent.com/MicrochipTech/cicd-assistant/main'
     }
 
@@ -41,7 +42,7 @@ pipeline {
 				)
                 sh(
                     label: 'Generate build makefiles',
-                    script: "prjMakefilesGenerator.sh -v -f ./@${env.BUILD_CONFIGURATION}"
+                    script: "prjMakefilesGenerator.sh -v -f ${env.PROJECT_NAME}@${env.BUILD_CONFIGURATION}"
                 )
                 sh(
                     label: 'Running Makefile',
