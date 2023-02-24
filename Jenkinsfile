@@ -65,7 +65,7 @@ pipeline {
             steps {
                 // Retrieve build artefacts
                 unstash 'build'
-                dir('${env.PROJECT_NAME}dist') {
+                dir('./CI_BuildTest.X/dist') {	// der Name muss hier raus
                     zip archive: true,
                         glob: '**/*',
                         overwrite: true,
