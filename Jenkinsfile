@@ -65,7 +65,7 @@ pipeline {
             steps {
                 // Retrieve build artefacts
                 unstash 'build'
-                dir('dist') {
+                dir('${env.PROJECT_NAME}dist') {
                     zip archive: true,
                         glob: '**/*',
                         overwrite: true,
