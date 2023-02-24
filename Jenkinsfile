@@ -49,6 +49,7 @@ pipeline {
                     script: """
                             rm -rf ./build
                             rm -rf ./dist
+							ls
                             make clean
                             make CONF=${env.BUILD_CONFIGURATION}
                             """
